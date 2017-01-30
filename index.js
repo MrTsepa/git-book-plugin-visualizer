@@ -12,7 +12,7 @@ module.exports = {
         css : [
             "bootstrap/css/bootstrap.min.css",
             "bootstrap/css/bootstrap.css",
-            "font-awesome/css/font-awesome.min.css",
+            "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
             "css/pythontutor.css",
             "css/visualizer.css"
         ]
