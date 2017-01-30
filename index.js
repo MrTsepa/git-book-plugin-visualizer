@@ -5,7 +5,7 @@ module.exports = {
             "js/jquery-1.11.1.min.js",
             "js/jquery.jsPlumb-1.6.4-min.js",
             "bootstrap/js/bootstrap.min.js",
-            "js/ace-editor/ace.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js",
             "js/visualizer.js",
             "js/visualizer-page.js"
         ],
