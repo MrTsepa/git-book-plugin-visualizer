@@ -276,7 +276,7 @@ function Visualizer(block, init_code, init_stdin, passed_options) {
 	function _setupEditors() {
 		blocks.code.text(init_code);
 		blocks.stdin.text(init_stdin);
-		
+
 
 		editors.code = ace.edit(blocks.code[0]);
 		editors.stdin = ace.edit(blocks.stdin[0]);
@@ -615,7 +615,7 @@ function Visualizer(block, init_code, init_stdin, passed_options) {
 	}
 
 	function _updateOutput() {
-		editors.stdout.setValue(current.stdout);
+		editors.stdout.setValue(current.stdout === undefined ? "" : current.stdout);
 		editors.stdout.selection.clearSelection(); // Ace editor selects text, if it was changed. In our case, it looks not very good...
 	}
 
