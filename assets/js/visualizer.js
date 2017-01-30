@@ -277,6 +277,7 @@ function Visualizer(block, init_code, init_stdin, passed_options) {
 		blocks.code.text(init_code);
 		blocks.stdin.text(init_stdin);
 
+		console.log(blocks);
 
 		editors.code = ace.edit(blocks.code[0]);
 		editors.stdin = ace.edit(blocks.stdin[0]);
