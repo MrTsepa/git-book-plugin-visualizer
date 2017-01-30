@@ -25,7 +25,7 @@ module.exports = {
     blocks: {
         visualizer: {
             process: function (block) {
-                return "<div id='visualiser'></div>";
+                return "<div id='visualizer'></div>";
             }
         }
     },
