@@ -1,0 +1,9 @@
+{
+  "name": "gitbook-plugin-visualizer",
+  "version": "0.0.1",
+  "description": "This is my first GitBook plugin",
+
+  "engines": {
+    "gitbook": ">=3.0.0-pre.0"
+  }
+}

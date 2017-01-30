@@ -1,0 +1,14 @@
+footer {
+	text-align: left;
+	border-top: 1px solid #bbbbbb;
+	padding: 11px 0 40px 300px;
+	font-size: 75%;
+}
+
+footer .like-buttons {
+    width: 100%;
+}
+
+.like-buttons > div {
+    float: left;
+}
