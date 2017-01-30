@@ -22,7 +22,7 @@ module.exports = {
 
     // Map of new blocks
     blocks: {
-        visualiser: {
+        visualizer: {
             process: function (block) {
                 return "<div id='visualiser'></div>";
             }
