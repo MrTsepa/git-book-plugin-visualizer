@@ -1368,7 +1368,7 @@ function Visualizer(block, init_code, init_stdin, passed_options) {
 			return;
 		}
 
-		var req = getExecutionResult(viss.code, viss.stdin, options.explain_mode)
+		var req = getExecutionResult(viss.code, viss.stdin, options.explain_mode);
 
 		clear();
 
