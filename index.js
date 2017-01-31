@@ -18,7 +18,11 @@ module.exports = {
     },
 
     // Map of hooks
-    hooks: {},
+    hooks: {
+        page: function(page) {
+            visualizer = new Visualizer('#visualizer', '', '', {'show_stdin_initially': true});
+        }
+    },
 
     // Map of new blocks
     blocks: {
