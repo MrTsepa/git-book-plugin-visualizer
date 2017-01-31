@@ -5,3 +5,9 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+require(["gitbook"], function (gitbook) {
+    gitbook.events.bind("page.change", function() {
+        init();
+    });
+});
