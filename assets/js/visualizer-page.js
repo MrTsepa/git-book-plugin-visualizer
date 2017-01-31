@@ -11,3 +11,15 @@ require(["gitbook"], function (gitbook) {
         init();
     });
 });
+
+function getExecutionResult(user_script, input_data, explain) {
+    var host = book.config.get('execution_host', '');
+    var url = host + '/execute';
+    console.log(url);
+    var res = $.get(url, {
+        user_script: user_script,
+        input_data : input_data,
+        explain    : explain
+    });
+    console.log(res);
+}
