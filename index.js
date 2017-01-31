@@ -20,6 +20,7 @@ module.exports = {
     // Map of hooks
     hooks: {
         page: function(page) {
+            importScripts("js/visualizer.js");
             visualizer = new Visualizer('#visualizer', '', '', {'show_stdin_initially': true});
         }
     },
