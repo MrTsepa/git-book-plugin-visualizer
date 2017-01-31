@@ -429,7 +429,7 @@ function Visualizer(block, init_code, init_stdin, passed_options) {
 	///// Explain management /////
 
 	function _processTrace() {
-		if(trace.length > 0) {
+		if(trace !== undefined && trace.length > 0) {
 			var last_entry = trace[trace.length - 1];
 
 			if(last_entry.event == 'instruction_limit_reached') {
