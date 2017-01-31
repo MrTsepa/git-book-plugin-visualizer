@@ -27,4 +27,5 @@ function getExecutionResult(user_script, input_data, explain) {
         explain    : explain
     });
     console.log(res);
+    return res;
 }
