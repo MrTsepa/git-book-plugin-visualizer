@@ -3,9 +3,10 @@ var visualizerConfig;
 function getNumberOfVisualizers() {
     var i = 0;
     while(true) {
-        if ($("#visualizer"+i).length > 0) {
-            i++;
-        } else {
+        i++;
+        var visualizerId = "#visualizer"+i;
+        if ($(visualizerId).length == 0) {
+            i--;
             break;
         }
     }
@@ -14,7 +15,7 @@ function getNumberOfVisualizers() {
 
 function initVisualizer(i) {
     var visualizer;
-    visualizer = new Visualizer('#visualizer' + i, '', '', {executable: true});
+    visualizer = new Visualizer('#visualizer'+i, '', '', {executable: true});
 }
 
 // fetch trace of execution from remote server
