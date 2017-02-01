@@ -37,7 +37,7 @@ require(["gitbook"], function (gitbook) {
 
     // Bind page events to js functions
     gitbook.events.bind("start", function (e, config) {
-        visualizerConfig = config;
+        visualizerConfig = config.visualizer;
         for (var i = 1; i <= getNumberOfVisualizers(); i++) {
             initVisualizer(i);
         }
