@@ -2,7 +2,7 @@ var execution_host;
 
 function init() {
     var visualizer;
-    visualizer = new Visualizer('#visualizer', '', '', {'show_stdin_initially': true});
+    visualizer = new Visualizer('#visualizer', '', '', {executable: true});
     // visualizer.focusCodeEditor();
 }
 
