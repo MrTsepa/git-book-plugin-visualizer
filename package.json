@@ -1,7 +1,14 @@
 {
   "name": "gitbook-plugin-visualizer",
   "version": "1.0.0",
-  "description": "Python real-time visualizer",
+  "main": "index.js",
+  "keywords": ["python", "code"],
+  "author": "MrTsepa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrTsepa/git-book-plugin-visualizer.git"
+  }, 
+  "description": "Python real-time visualizer gitbook plugin",
   "engines": {
     "gitbook": ">=3.0.0-pre.0"
   }
