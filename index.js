@@ -1,3 +1,14 @@
+function createVisualizerHtmlFactory() {
+    var numberOfVisualizers = 0;
+    return function() {
+        numberOfVisualizers++;
+        divId = 'visualizer' + numberOfVisualizers.toString();
+        return "<div id="+divId+"></div>";
+    }
+}
+
+var getVisualizerHtml = createVisualizerHtmlFactory();
+
 module.exports = {
     website: {
         assets: "./assets",
@@ -24,7 +35,8 @@ module.exports = {
     blocks: {
         visualizer: {
             process: function (block) {
-                return "<div id='visualizer'></div>";
+                var html = getVisualizerHtml();
+                return html;
             }
         }
     },

@@ -1,24 +1,25 @@
-var execution_host;
+var visualizerConfig;
 
-function init() {
-    var visualizer;
-    visualizer = new Visualizer('#visualizer', '', '', {executable: true});
-    // visualizer.focusCodeEditor();
+function getNumberOfVisualizers() {
+    var i = 0;
+    while(true) {
+        if ($("#visualizer"+i).length > 0) {
+            i++;
+        } else {
+            break;
+        }
+    }
+    return i;
 }
 
+function initVisualizer(i) {
+    var visualizer;
+    visualizer = new Visualizer('#visualizer' + i, '', '', {executable: true});
+}
 
-require(["gitbook"], function (gitbook) {
-    gitbook.events.bind("start", function (e, config) {
-        execution_host = config.visualizer.execution_host;
-        init();
-    });
-    gitbook.events.bind("page.change", function() {
-        init();
-    });
-});
-
+// fetch trace of execution from remote server
 function getExecutionResult(user_script, input_data, explain) {
-    var host = execution_host;
+    host = visualizerConfig.execution_host;
     var url = host + '/execute';
     console.log(url);
     var res = $.get(url, {
@@ -29,3 +30,20 @@ function getExecutionResult(user_script, input_data, explain) {
     console.log(res);
     return res;
 }
+
+
+require(["gitbook"], function (gitbook) {
+
+    // Bind page events to js functions
+    gitbook.events.bind("start", function (e, config) {
+        visualizerConfig = config;
+        for (var i = 0; i < getNumberOfVisualizers(); i++) {
+            initVisualizer(i);
+        }
+    });
+    gitbook.events.bind("page.change", function() {
+        for (var i = 0; i < getNumberOfVisualizers(); i++) {
+            initVisualizer(i);
+        }
+    });
+});
