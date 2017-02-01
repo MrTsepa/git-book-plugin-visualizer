@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-visualizer",
-  "version": "0.0.1",
+  "version": "1.0",
   "description": "Python real-time visualizer"
 
   "engines": {
