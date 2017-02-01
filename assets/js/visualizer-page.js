@@ -38,12 +38,12 @@ require(["gitbook"], function (gitbook) {
     // Bind page events to js functions
     gitbook.events.bind("start", function (e, config) {
         visualizerConfig = config;
-        for (var i = 0; i < getNumberOfVisualizers(); i++) {
+        for (var i = 1; i <= getNumberOfVisualizers(); i++) {
             initVisualizer(i);
         }
     });
     gitbook.events.bind("page.change", function() {
-        for (var i = 0; i < getNumberOfVisualizers(); i++) {
+        for (var i = 1; i <= getNumberOfVisualizers(); i++) {
             initVisualizer(i);
         }
     });
