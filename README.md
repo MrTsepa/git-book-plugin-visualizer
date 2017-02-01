@@ -6,7 +6,9 @@ Sources can be found on [git](https://github.com/pythontutor/pythontutor-ru).
 
 This plugin is running now using backend server (for python executing) hosted by me.
 I don't guarantee that it will be working all time. If you want, you can start your server using //TODO sources.
-I have in plans to port this to pure JS (like Brython) to run using browser only, please contribute if you like.
+This is not complicated, all you need is python3 and bottle package. 
+
+I have in plans to port this to pure JS (like Brython) to run it with browser only, please contribute if you like.
 
 ## Usage
 
