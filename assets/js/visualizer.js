@@ -1379,7 +1379,8 @@ function Visualizer(block, init_code, init_stdin, passed_options) {
 
 		updateUI();
 
-		req.done(function(server_res) {
+		req.done(function(server_data) {
+			var server_res = JSON.parse(server_data);
 			is_executing = false;
 
 			if(server_res.result == 'internal_error') {
