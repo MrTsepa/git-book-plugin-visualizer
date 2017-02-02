@@ -15,12 +15,23 @@ I have in plans to port this to pure JS (like Brython) to run it with browser on
 Usage is quite simple, just let your `book.json` have
 ```
 {
-  "plugins": ["visualizer"]
+  "plugins": ["python-visualizer"]
 }
 ```
 and insert to your `.md`
 ```
 {% visualizer %}
-
 {% endvisualizer %}
 ```
+Or
+```
+{% visualizer %}
+# Put your code here!
+x = 1
+for i in range(10):
+    x *= i
+print("10! =", x)
+{% endvisualizer %}
+```
+
+Your code will also stay while you're going to another pages!
