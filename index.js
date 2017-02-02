@@ -35,7 +35,7 @@ module.exports = {
     blocks: {
         visualizer: {
             process: function (block) {
-                var html = getVisualizerHtml(block);
+                var html = getVisualizerHtml(block.body);
                 return html;
             }
         }
