@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/MrTsepa/git-book-plugin-visualizer.git"
   },
-  "description": "Python real-time visualizer gitbook plugin",
+  "description": "Python real-time visualizer",
   "engines": {
     "gitbook": ">=3.0.0-pre.0"
   }
