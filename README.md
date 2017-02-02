@@ -27,11 +27,13 @@ Or
 ```
 {% visualizer %}
 # Put your code here!
+# And watch visualisation line by line!
 x = 1
-for i in range(10):
+for i in range(1, 10):
     x *= i
 print("10! =", x)
 {% endvisualizer %}
 ```
-
-Your code will also stay while you're going to another pages!
+## Features
+* Feel free to create several visualizers on one page.
+* Your code will also stay while you're going to another pages!
