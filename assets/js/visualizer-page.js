@@ -48,7 +48,13 @@ require(["gitbook"], function (gitbook) {
     });
     gitbook.events.bind("page.change", function() {
         for (var i = 1; i <= getNumberOfVisualizers(); i++) {
-            initVisualizer(i, visualizer.code);
+            if (visualizer === undefined) {
+                var visualizerId = 'visualizer'+i;
+                var initCode = $('#'+visualizerId+'-init-code').html();
+                initVisualizer(i, initCode);
+            } else {
+                initVisualizer(i, visualizer.code);
+            }
         }
     });
 });
