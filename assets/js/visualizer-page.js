@@ -1,3 +1,4 @@
+var visualizer;
 var visualizerConfig;
 
 function getNumberOfVisualizers() {
@@ -13,10 +14,8 @@ function getNumberOfVisualizers() {
     return i;
 }
 
-function initVisualizer(i) {
-    var visualizer;
+function initVisualizer(i, initCode) {
     var visualizerId = 'visualizer'+i;
-    var initCode = $('#'+visualizerId+'-init-code').html();
     visualizer = new Visualizer('#'+visualizerId, initCode, '', {executable: true});
 }
 
@@ -41,12 +40,14 @@ require(["gitbook"], function (gitbook) {
     gitbook.events.bind("start", function (e, config) {
         visualizerConfig = config.visualizer;
         for (var i = 1; i <= getNumberOfVisualizers(); i++) {
-            initVisualizer(i);
+            var visualizerId = 'visualizer'+i;
+            var initCode = $('#'+visualizerId+'-init-code').html();
+            initVisualizer(i, initCode);
         }
     });
     gitbook.events.bind("page.change", function() {
         for (var i = 1; i <= getNumberOfVisualizers(); i++) {
-            initVisualizer(i);
+            initVisualizer(i, visualizer.blocks.curret_code);
         }
     });
 });
