@@ -15,7 +15,8 @@ function getNumberOfVisualizers() {
 
 function initVisualizer(i) {
     var visualizer;
-    visualizer = new Visualizer('#visualizer'+i, '', '', {executable: true});
+    var visualizerId = '#visualizer'+i;
+    visualizer = new Visualizer(visualizerId, $(visualizerId).html(), '', {executable: true});
 }
 
 // fetch trace of execution from remote server

@@ -1,9 +1,9 @@
 function createVisualizerHtmlFactory() {
     var numberOfVisualizers = 0;
-    return function() {
+    return function(block) {
         numberOfVisualizers++;
         divId = 'visualizer' + numberOfVisualizers.toString();
-        return "<div id="+divId+"></div>";
+        return "<div id="+divId+">"+block+"</div>";
     }
 }
 
@@ -35,7 +35,7 @@ module.exports = {
     blocks: {
         visualizer: {
             process: function (block) {
-                var html = getVisualizerHtml();
+                var html = getVisualizerHtml(block);
                 return html;
             }
         }
