@@ -1,6 +1,4 @@
 var visualizerConfig;
-var block = ctx.block;
-console.log(ctx);
 
 function getNumberOfVisualizers() {
     var i = 0;
