@@ -21,7 +21,7 @@ function initVisualizer(i, initCode) {
 
 // fetch trace of execution from remote server
 function getExecutionResult(user_script, input_data, explain) {
-    host = visualizerConfig.execution_host;
+    //host = visualizerConfig.execution_host;
     host = "https://ec2.eyfojurep.tk/visualizer";
     var url = host + '/execute';
     console.log(url);
