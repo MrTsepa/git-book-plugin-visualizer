@@ -3,7 +3,10 @@ function createVisualizerHtmlFactory() {
     return function(block) {
         numberOfVisualizers++;
         divId = 'visualizer' + numberOfVisualizers.toString();
-        return "<div id="+divId+">"+block+"</div>";
+        // Not a super cool way to pass arguments to visualizer TODO refactor
+        return "<div id="+divId+">"+
+                "<div id="+divId+"-init-code>"+block+"</div>"+
+            "</div>";
     }
 }
 
