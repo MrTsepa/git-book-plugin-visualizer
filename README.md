@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/gitbook-plugin-python-visualizer.svg)](https://badge.fury.io/js/gitbook-plugin-python-visualizer)
 # Python visualizer for gitbook
 ## Origins
 This is a python visualizer ported from [pythontutor.ru](http://pythontutor.ru) 
