@@ -40,10 +40,18 @@ require(["gitbook"], function (gitbook) {
     // Bind page events to js functions
     gitbook.events.bind("start", function (e, config) {
         visualizerConfig = config.visualizer;
-        for (var i = 1; i <= getNumberOfVisualizers(); i++) {
+
+        if (visualizers === undefined)
+            visualizers = [];
+        numberOfVisualizers = getNumberOfVisualizers();
+        while (visualizers.length < numberOfVisualizers) {
+            visualizers.push(undefined);
+        }
+
+        for (var i = 1; i <= numberOfVisualizers; i++) {
             var visualizerId = 'visualizer'+i;
             var initCode = $('#'+visualizerId+'-init-code').html();
-            initVisualizer(i, initCode);
+            visualizers.push(initVisualizer(i, initCode));
         }
     });
     gitbook.events.bind("page.change", function() {
@@ -51,7 +59,7 @@ require(["gitbook"], function (gitbook) {
             visualizers = [];
         numberOfVisualizers = getNumberOfVisualizers();
         while (visualizers.length < numberOfVisualizers) {
-            visualizers.append(undefined);
+            visualizers.push(undefined);
         }
         for (var i = 1; i <= numberOfVisualizers; i++) {
             if (visualizers[i-1] === undefined) {
