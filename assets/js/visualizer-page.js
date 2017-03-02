@@ -51,7 +51,7 @@ require(["gitbook"], function (gitbook) {
         for (var i = 1; i <= numberOfVisualizers; i++) {
             var visualizerId = 'visualizer'+i;
             var initCode = $('#'+visualizerId+'-init-code').html();
-            visualizers.push(initVisualizer(i, initCode));
+            visualizers[i-1] = initVisualizer(i, initCode);
         }
     });
     gitbook.events.bind("page.change", function() {
@@ -64,7 +64,9 @@ require(["gitbook"], function (gitbook) {
         for (var i = 1; i <= numberOfVisualizers; i++) {
             if (visualizers[i-1] === undefined) {
                 var visualizerId = 'visualizer'+i;
-                var initCode = $('#'+visualizerId+'-init-code').html().trim();
+                var initCode = $('#'+visualizerId+'-init-code').html();
+                if (!(initCode === undefined))
+                    initCode = initCode.trim();
                 visualizers[i-1] = initVisualizer(i, initCode);
             } else {
                 visualizers[i-1] = initVisualizer(i, visualizers[i-1].code);
