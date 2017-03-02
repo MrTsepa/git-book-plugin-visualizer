@@ -11,7 +11,7 @@ This is not complicated, all you need is `python3` and `bottle` package.
 
 I have in plans to port this to pure JS (like Brython) to run it with browser only, please contribute if you like.
 
-![](screenshot.png)
+![](https://github.com/MrTsepa/git-book-plugin-visualizer/blob/master/screenshot.png)
 
 ## Usage
 
