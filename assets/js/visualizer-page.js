@@ -15,6 +15,8 @@ function getNumberOfVisualizers() {
 }
 
 function initVisualizer(i, initCode) {
+    if (!(initCode === undefined))
+        initCode = initCode.trim();
     var visualizerId = 'visualizer'+i;
     return new Visualizer('#'+visualizerId, initCode, '', {executable: true});
 }
@@ -65,8 +67,6 @@ require(["gitbook"], function (gitbook) {
             if (visualizers[i-1] === undefined) {
                 var visualizerId = 'visualizer'+i;
                 var initCode = $('#'+visualizerId+'-init-code').html();
-                if (!(initCode === undefined))
-                    initCode = initCode.trim();
                 visualizers[i-1] = initVisualizer(i, initCode);
             } else {
                 visualizers[i-1] = initVisualizer(i, visualizers[i-1].code);
